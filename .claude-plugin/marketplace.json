@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    {
+      "name": "claude-skills",
+      "source": {
+        "source": "github",
+        "repo": "kool7/claude-skills"
+      }
+    }
+  ]
+}
