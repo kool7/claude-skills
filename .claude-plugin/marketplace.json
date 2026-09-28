@@ -1,4 +1,6 @@
 {
+  "name": "kool7-skills",
+  "owner": { "name": "kool7" },
   "plugins": [
     {
       "name": "claude-skills",
