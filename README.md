@@ -20,18 +20,15 @@ Add this to your `~/.claude/settings.json`:
 "extraKnownMarketplaces": {
   "kool7-skills": {
     "source": {
-      "source": "git",
-      "url": "https://github.com/kool7/claude-skills.git"
+      "source": "github",
+      "repo": "kool7/claude-skills"
     },
     "autoUpdate": true
   }
+},
+"enabledPlugins": {
+  "claude-skills@kool7-skills": true
 }
-```
-
-Then in Claude Code:
-
-```
-/install-plugin kool7-skills
 ```
 
 ## Usage
