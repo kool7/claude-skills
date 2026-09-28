@@ -15,7 +15,10 @@ Run in parallel using GitHub MCP (never `gh` CLI or git push):
 
 **PR title number rule:** The CV number in the title equals the next GitHub PR number. If the last PR was #7, title uses CV-8.
 
-If the user passed a prefix as an argument (e.g. `/create-pr CV`), use it. Otherwise check the project CLAUDE.md for a line like `prefix: CV`. If still not found, ask the user: "What prefix should I use? (e.g. CV, AB, FA)"
+**Prefix and number rules:**
+- If the user passed a full `PREFIX-N` (e.g. `/create-pr TS-711`), use it exactly as the title prefix — do not look up or override the number.
+- If the user passed only a prefix word (e.g. `/create-pr CV`), append the next GitHub PR number: highest existing PR number + 1.
+- If no argument, check the project CLAUDE.md for `prefix: CV`. If still not found, ask: "What prefix should I use? (e.g. CV, TS-123, AB)"
 
 ## Step 2 — Understand what changed
 
@@ -94,7 +97,7 @@ The `findFileInReport` function was updated to normalize `\\` to `/`...
 - `body`: bullets from Step 5
 
 **6b. Immediately after**, call `mcp__github__update_issue` with the PR number returned in step 6a to set assignees and labels in one call:
-- `assignees`: `["kool7"]` — always assign the repo owner
+- `assignees`: `[owner]` — use the repo owner parsed from Step 1, not a hardcoded name
 - `labels`: pick from the label map below based on the PR type from Step 3
 
 **Label rules — always apply ALL that fit, never just one if multiple apply:**
