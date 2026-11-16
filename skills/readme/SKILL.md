@@ -1,6 +1,6 @@
 ---
 name: readme
-description: Smart README skill — detects project type and applies the right rules. For VS Code extensions: writes README.md as a Marketplace product page (no badges/contributing/license) and DEV.md as the developer guide. For all other projects: writes a full README.md with installation, contributing, license, etc. Use this as the default entry point for any README task.
+description: "Smart README skill — detects project type and applies the right rules. For VS Code extensions: writes README.md as a Marketplace product page (no badges/contributing/license) and DEV.md as the developer guide. For all other projects: writes a full README.md with installation, contributing, license, etc. Use this as the default entry point for any README task."
 allowed-tools: Bash Read Glob Grep WebFetch WebSearch Agent
 argument-hint: [path to project root, or "." for current directory]
 ---
